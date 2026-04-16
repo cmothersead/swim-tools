@@ -5,7 +5,7 @@ export class Time {
     isNegative: boolean = false;
 
     constructor(value: number | string | undefined | null) {
-        if (value === undefined || value === null) {
+        if (value === undefined || value === null || value === "") {
             this.minutes = 0;
             this.seconds = 0;
             this.hundredths = 0;
@@ -35,7 +35,7 @@ export class Time {
                     return;
                 } else {
                     throw new TypeError(
-                        `Invalid value provided to Time object: ${value}`
+                        `Invalid value provided to Time object: ${value}`,
                     );
                 }
             }
@@ -69,7 +69,7 @@ export class Time {
             }
         } else {
             throw new TypeError(
-                `Invalid value provided to Time object: ${value}`
+                `Invalid value provided to Time object: ${value}`,
             );
         }
     }
@@ -99,7 +99,7 @@ export class Time {
                     ? String(this.seconds).padStart(2, "0")
                     : String(this.seconds);
             return `${this.isNegative ? "-" : ""}${minutes}${seconds}.${String(
-                this.hundredths
+                this.hundredths,
             ).padStart(2, "0")}`;
         }
     }
@@ -125,7 +125,7 @@ export class Score {
                     return;
                 } else {
                     throw new TypeError(
-                        `Invalid value provided to Score object: ${value}`
+                        `Invalid value provided to Score object: ${value}`,
                     );
                 }
             }
@@ -149,7 +149,7 @@ export class Score {
             }
         } else {
             throw new TypeError(
-                `Invalid value provided to Score object: ${value}`
+                `Invalid value provided to Score object: ${value}`,
             );
         }
     }
